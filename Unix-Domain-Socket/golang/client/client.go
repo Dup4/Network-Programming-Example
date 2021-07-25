@@ -11,7 +11,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Dup4/Socket-Network-Programming-Learning/common"
+	"github.com/Dup4/Network-Programming/Unix-Domain-Socket/golang/common"
 )
 
 const unixSocketDomain = "unix"
