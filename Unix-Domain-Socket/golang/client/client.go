@@ -14,8 +14,6 @@ import (
 	"network-example/common"
 )
 
-const unixSocketDomain = "unix"
-
 func main() {
 	input := bufio.NewScanner(os.Stdin)
 
@@ -84,7 +82,7 @@ func getConn() (net.Conn, *bufio.Reader) {
 }
 
 func initConn() (net.Conn, error) {
-	conn, err := net.Dial(unixSocketDomain, common.SocketPath)
+	conn, err := net.Dial(common.UnixSocketNetworkMode, common.SocketPath)
 
 	if err != nil {
 		return nil, err

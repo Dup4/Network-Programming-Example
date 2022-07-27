@@ -47,10 +47,14 @@ func main() {
 }
 
 func initUds() net.Listener {
-	uds, err := net.Listen("unix", common.SocketPath)
+	uds, err := net.ListenUnix(common.UnixSocketNetworkMode,
+		&net.UnixAddr{
+			Name: common.SocketPath,
+			Net:  common.UnixSocketNetworkMode,
+		})
 
 	if err != nil {
-		log.Println("Unix Domain Socket creation failed，attempting to recreate ->", err)
+		log.Println("Unix Domain Socket creation failed, attempting to recreate ->", err)
 		err = os.Remove(common.SocketPath)
 
 		if err != nil {
