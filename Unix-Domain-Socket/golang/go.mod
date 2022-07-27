@@ -1,3 +1,3 @@
-module github.com/Dup4/Network-Programming-Example/Unix-Domain-Socket/golang
+module network-example
 
 go 1.18

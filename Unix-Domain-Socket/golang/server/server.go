@@ -10,7 +10,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/Dup4/Network-Programming-Example/Unix-Domain-Socket/golang/common"
+	"network-example/common"
 )
 
 var closeWg sync.WaitGroup
